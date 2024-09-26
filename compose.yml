@@ -1,0 +1,10 @@
+services:
+  gcloud:
+    image: google/cloud-sdk:latest
+    container_name: gcloud-container
+    platform: linux/amd64
+    volumes:
+      - ./credential/credential.json:/key.json
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/key.json
+    tty: true
